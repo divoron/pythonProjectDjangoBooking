@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ordered Rooms</title>
+</head>
+<body>
+    <h1>Ordered Rooms</h1>
+
+    {% if ordered_rooms %}
+        <ul>
+            {% for room in ordered_rooms %}
+                <li>
+                    <p>Ordered Room: {{ room.ordered_room }}</p>
+                    <p>Type of Room: {{ room.type_room }}</p>
+                    <p>Created: {{ room.created_at }}</p>
+                    <p>Rental Days: {{ room.rental_days }}</p>
+                    <p>Guest Name: {{ room.guest_name }}</p>
+                </li>
+            {% end-for %}
+        </ul>
+    {% else %}
+        <p>No ordered rooms available.</p>
+    {% endif %}
+</body>
+</html>
