@@ -7,9 +7,9 @@
 <body>
     <h1>Ordered Rooms</h1>
 
-    {% if ordered_rooms %}
+    {% if booking_room_list %}
         <ul>
-            {% for room in ordered_rooms %}
+            {% for room in booking_room_list %}
                 <li>
                     <p>Ordered Room: {{ room.ordered_room }}</p>
                     <p>Type of Room: {{ room.type_room }}</p>
@@ -17,7 +17,7 @@
                     <p>Rental Days: {{ room.rental_days }}</p>
                     <p>Guest Name: {{ room.guest_name }}</p>
                 </li>
-            {% end-for %}
+            {% endfor %}
         </ul>
     {% else %}
         <p>No ordered rooms available.</p>
