@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>" />
     <title>Ordered Rooms</title>
 </head>
 <body>
     <h1>Ordered Rooms</h1>
 
-    {% if booking_room_list %}
+    {% if view.object_list %}
         <ul>
-            {% for room in booking_room_list %}
+            {% for room in view.object_list %}
                 <li>
                     <p>Ordered Room: {{ room.ordered_room }}</p>
                     <p>Type of Room: {{ room.type_room }}</p>
@@ -19,8 +19,7 @@
                 </li>
             {% endfor %}
         </ul>
-    {% else %}
-        <p>No ordered rooms available.</p>
     {% endif %}
+
 </body>
 </html>
