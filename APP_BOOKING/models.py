@@ -16,7 +16,7 @@ class Guest(models.Model):
 class BookingRoom(models.Model):
     ordered_room = models.CharField(max_length=5)
     type_room = models.CharField(max_length=10, help_text='Economy/Semi-suite/Luxury')
-    guest_surname = models.ForeignKey(Guest, on_delete=models.SET_NULL, null=True)
+    guest_surname = models.ForeignKey(Guest, on_delete=models.CASCADE)
     created_at = models.DateTimeField(default=timezone.now)
     rental_days = models.IntegerField()
 
